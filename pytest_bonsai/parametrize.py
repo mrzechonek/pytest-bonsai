@@ -3,7 +3,7 @@ import functools
 import inspect
 import itertools
 import logging
-from typing import Any, Callable, Generic, ParamSpec, Protocol, TypeVar
+from typing import Any, Callable, Generic, ParamSpec, Protocol, TypeVar, Mapping
 
 import pytest
 
@@ -120,10 +120,15 @@ def parametrized_fixture(model_or_func):
 
                 if inspect.isfunction(param):
                     value = resolve(request, param)
-                else:
+                elif isinstance(param, Mapping):
                     # otherwise, make the parameter a dataclass
                     request.param = make_param_model(request, **param)
                     value = func(*args, request=request, **kwargs)
+                else:
+                    raise TypeError(
+                        f"Invalid parameter type {type(param)} for fixture "
+                        f"{func.__module__}.{func.__name__}, expected function or a mapping"
+                    )
 
                 logger.debug(
                     "%s.%s(request.param=%r) -> %r",
