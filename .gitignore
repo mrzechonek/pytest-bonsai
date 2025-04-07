@@ -2,3 +2,5 @@
 .virtualenv
 *.egg-info
 
+build/
+dist/
