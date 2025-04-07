@@ -1,10 +1,10 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=64", "setuptools-scm>=8"]
 build-backend = "setuptools.build_meta"
 
 [project]
+dynamic = ["version"]
 name = "pytest-bonsai"
-version = "0.0.1"
 readme = "README.md"
 authors = [
   { name = "Michał 'Khorne' Lowas-Rzechonek", email = "michal@rzechonek.net" },
@@ -12,6 +12,8 @@ authors = [
 dependencies = [
   "pytest>=6",
 ]
+
+[tool.setuptools_scm]
 
 [project.entry-points.pytest11]
 bonsai = "pytest_bonsai"
