@@ -1,8 +1,10 @@
 # pytest bonsai
 
-<a href="https://pytest-bonsai.readthedocs.io/">
-    <img src="https://readthedocs.org/projects/pytest-bonsai/badge/?version=latest" alt="Read the Docs"/>
-</a>
+<p float="left">
+  <a href="https://github.com/mrzechonek/pytest-bonsai/actions/workflows/python-package.yml"><img src="https://github.com/mrzechonek/pytest-bonsai/actions/workflows/python-package.yml/badge.svg"/></a>
+  <a href="https://pytest-bonsai.readthedocs.io/"><img src="https://readthedocs.org/projects/pytest-bonsai/badge/?version=latest" alt="Read the Docs"/></a>
+  <a href="https://pypi.org/project/pytest-bonsai/"><img src="https://img.shields.io/pypi/v/pytest-bonsai"></a>
+</p>
 
 **pytest-bonsai** is a plugin that brings elegant, declarative, and composable
 test data to your test suite.
