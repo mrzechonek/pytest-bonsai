@@ -55,6 +55,10 @@ class ParametrizedFixture(Protocol[P]):
 
 
 def resolve(request, func_or_value):
+    """
+    :param request: The pytest's [FixtureRequest object](https://docs.pytest.org/en/7.1.x/reference/reference.html#request).
+    :param func_or_value: The function or value to resolved.
+    """
     if not isinstance(func_or_value, Callable):
         return func_or_value
 
@@ -79,6 +83,9 @@ def resolve(request, func_or_value):
 
 
 def parametrized_fixture(model_or_func):
+    """
+    :param model_or_func: A dataclass, or a function that takes a single parameter called `request`.
+    """
     if inspect.isfunction(model_or_func):
         assert inspect.signature(model_or_func).parameters.keys() == {
             "request"

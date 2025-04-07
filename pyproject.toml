@@ -15,6 +15,13 @@ dependencies = [
 
 [tool.setuptools_scm]
 
+[project.optional-dependencies]
+dev = [
+    "black",
+    "mkdocs",
+    "mkdocstrings[python]",
+]
+
 [project.entry-points.pytest11]
 bonsai = "pytest_bonsai"
 
